@@ -26,8 +26,8 @@
 
 (defspec equivalent-addition
   100
-  (prop/for-all [n (gen/choose 1 3998)]
-    (prop/for-all [m (gen/choose 1 (- 3999 n))]
-      (= (roman->decimal (roman-add (decimal->roman n)
-                                    (decimal->roman m)))
-         (+ n m)))))
+  (prop/for-all [n (gen/choose 1 2000)
+                 m (gen/choose 1 1999)]
+    (= (roman->decimal (roman-add (decimal->roman n)
+                                  (decimal->roman m)))
+       (+ n m))))
